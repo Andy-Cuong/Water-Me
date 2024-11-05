@@ -1,7 +1,7 @@
 Water Me! app
 =======================================
 
-This repository contains the code for the Water Me! app project.
+Solution code by learner for the [Water Me!](https://github.com/google-developer-training/basic-android-kotlin-compose-training-waterme) app project.
 
 This project is an opportunity for you to demonstrate the concepts you learned in Unit 7 of Android Basics with Compose.
 
@@ -19,5 +19,6 @@ You need to know:
 Getting Started
 ---------------
 
-1. Download the starter code
+1. Download the solution code
 2. Open the project in Android Studio
+3. Build and run the app
