@@ -31,5 +31,26 @@ class WorkManagerWaterRepository(context: Context) : WaterRepository {
     override val plants: List<Plant>
         get() = DataSource.plants
 
-    override fun scheduleReminder(duration: Long, unit: TimeUnit, plantName: String) {}
+    override fun scheduleReminder(duration: Long, unit: TimeUnit, plantName: String) {
+        val multiplier = when (unit) {
+            TimeUnit.SECONDS -> 1_000L
+            TimeUnit.MINUTES -> 60_000L
+            else -> 1_000L
+        }
+
+        // Data for the worker
+        val data = Data.Builder()
+            .putString(WaterReminderWorker.NAME_KEY, plantName)
+            .putLong(WaterReminderWorker.DURATION_KEY, duration * multiplier)
+            .build()
+
+        val reminderBuilder = OneTimeWorkRequestBuilder<WaterReminderWorker>()
+        reminderBuilder.setInputData(data)
+
+        workManager.enqueueUniqueWork(
+            "$plantName $duration $unit",
+            ExistingWorkPolicy.REPLACE,
+            reminderBuilder.build()
+        )
+    }
 }

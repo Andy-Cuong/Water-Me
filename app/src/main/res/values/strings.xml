@@ -17,9 +17,9 @@
     <string name="app_name">Water Me</string>
     <string name="remind_me">Remind me to water %s in…</string>
     <string name="five_seconds">5 seconds</string>
-    <string name="one_day">1 day</string>
-    <string name="one_week">1 week</string>
-    <string name="one_month">1 month</string>
+    <string name="one_minute">1 minute</string>
+    <string name="two_minutes">2 minutes</string>
+    <string name="three_minutes">3 minutes</string>
     <string name="water">Water</string>
     <string name="time_to_water">It\'s time to water your %s.</string>
 
@@ -30,7 +30,7 @@
     <string name="fiddle_leaf_fig">Fiddle Leaf Fig</string>
     <string name="strawberry">Strawberry</string>
     <string name="daily">daily</string>
-    <string name="weekly">weekly</string>
+    <string name="weekly" translatable="false">weekly</string>
     <string name="monthly">monthly</string>
     <string name="succulent">Succulent</string>
     <string name="root">Root</string>
